@@ -55,16 +55,16 @@ for wkE in dummyData:
 
 
 app = Flask(__name__)
-@app.route('/', methods=['GET'])
+@app.route('/v1', methods=['GET'])
 def index():
     return json.dumps({'name': 'alice',
                        'email': 'alice@outlook.com'})
 
-@app.route("/users", methods=['GET'])
+@app.route("/v1/users", methods=['GET'])
 def usersList():
     return jsonify(json_list)
 
-@app.route("/users/<user_id>", methods=['GET'])
+@app.route("/v1/users/<user_id>", methods=['GET'])
 def userSingle(user_id: int):
 
     retStr = {"id": user_id, "email": "", "first_name": "", "last_name": "", "avatar": ""}

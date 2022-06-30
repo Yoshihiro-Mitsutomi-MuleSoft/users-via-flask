@@ -2,4 +2,3 @@ black
 flask
 pytest
 pylint
-pylance
